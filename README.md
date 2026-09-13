@@ -29,7 +29,8 @@ Microservices across multiple Docker servers
 
 **ipvlan **  Containers appear as devices on the host's network.
                         
-                        docker network create -d ipvlan  --subnet=192.168.1.0/24 --gateway=192.168.1.1 -o parent=eth0 my-ipvlan
+      docker network create -d ipvlan  --subnet=192.168.1.0/24 --gateway=192.168.1.1 -o parent=eth0 my-ipvlan
+
 Subnet Allocation 
                 
                 docker network create --ipv6 --subnet 192.0.2.0/24 --subnet 2001:db8::/64 mynet
