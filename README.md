@@ -31,6 +31,16 @@ Microservices across multiple Docker servers
                         
       docker network create -d ipvlan  --subnet=192.168.1.0/24 --gateway=192.168.1.1 -o parent=eth0 my-ipvlan
 
+      | Driver      | Main purpose                             |      Multi-host? | Typical IP     |
+| ----------- | ---------------------------------------- | ---------------: | -------------- |
+| **bridge**  | Normal container networking              |                ❌ | `172.17.x.x`   |
+| **host**    | Share host network                       |                ❌ | Host's IP      |
+| **none**    | No networking                            |                ❌ | None           |
+| **overlay** | Docker hosts communicate                 |                ✅ | Overlay subnet |
+| **ipvlan**  | Containers directly use physical network | Depends on setup | LAN IP         |
+| **macvlan** | Containers appear as physical devices    | Depends on setup | LAN IP         |
+
+
 Subnet Allocation 
                 
                 docker network create --ipv6 --subnet 192.0.2.0/24 --subnet 2001:db8::/64 mynet
