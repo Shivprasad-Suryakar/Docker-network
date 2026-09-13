@@ -34,5 +34,5 @@ Microservices across multiple Docker servers
 
 Subnet Allocation 
                 
-                docker network create --ipv6 --subnet 192.0.2.0/24 --subnet 2001:db8::/64 mynet
+     docker network create --ipv6 --subnet 192.0.2.0/24 --subnet 2001:db8::/64 mynet
 
